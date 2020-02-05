@@ -1,0 +1,140 @@
+SUPERVISED LEARNING
+- disebut supervised karena ada jawaban benarnya, ada labelnya dan juga targetnya
+- Regresi --> mencari tren dari data yang numerik --> trend finder
+- Classification --> sifatnya categorical; pilih A atau B --> pattern finder
+- keyword: prediction
+
+UNSUPERVISED LEARNING
+- mencari pola dari sesuatu yang tidak ada status nya
+- hanya ada data, tidak ada label
+- keyword: recommendation 
+
+REINFORCEMENT LEARNING
+
+
+
+
+
+JUPYTER
+opening jupyter via anaconda prompt
+- open anaconda prompt
+- open folder that is being to be opened
+- type >>>jupyter notebook
+
+
+Function
+- docstring --> shift + tab
+- jika suatu fungsi tidak memunculkan sst ketika di run, maka function itu adalah in place function 
+
+Slicing on list
+- inclusive:exclusive
+
+
+
+sejarah Conda
+sebelumnya python tidak banyak pakai karena kesulitan orang pakai 
+lalu dibuatlah PyPi untuk mengumpulkan library (marketplace)
+lalu muncullah Conda yang merapikan library lebih baik dari PyPi (marketplace)
+cara install 
+- PyPi --> pip install
+- Conda --> conda install
+
+kapan pakai pip atau conda? --> selama ada di conda, pakai conda, jika tidak ada baru pakai pypi
+
+cara kerja Conda
+1. install Conda (miniconda atau anaconda)
+2. default conda adalah membuatkan "base" pada prompt
+	di dalamnya sudah ada python 3, conda dan bisa ditambahkan (jupyter, nb_conda_)
+	anaconda adalah all in one (sudah meng cover sekitar 700 libraries)
+3. dalam conda bisa dibuat berbagai environment dengan berbagai library yang dapat disesuaikan
+4. best practice --> buat environment sendiri setiap kali buat project
+5. environment ini bisa dibagikan ke sesama team
+6. environment ini bersifat global
+7. instal dengan anaconda bisa lama karena solving dan checking conflict sangat lama (cek 700an packages)
+8. jupyter diinstal di base dan bisa interact dengan environment lain
+
+
+CONDA
+1. Check Environment --> conda env list
+	Remove Environment --> conda env remove --name nama_env
+2. Install package di suatu environment --> conda install --name nama_environment numpy
+3. Check list of all libraries --> conda list
+4. Check list in the environment --> conda list --name coba_env
+5. Connect environment to jupyter --> conda install --name coba_env nb_conda_kernels
+6. Other cheatsheets
+	pip install <nama_package>
+	pip install <nama_package>==<versi>
+	pip install -r requirements.txt
+
+	conda install <nama_package>
+	conda install <nama_package>==<versi>
+
+	conda create --name <nama_env> <basis>
+	conda list
+	conda env list
+
+	conda env create -f environment.yml
+	conda env remove --name <nama_env>
+
+
+cek env --> conda env list
+hapus env --> conda env remove --name coba_env
+
+
+
+
+
+
+
+
+PANDAS
+PAnel DAtaS
+
+Article 1
+Data Type
+
+Article 2
+How to set Python tool
+
+
+
+
+
+
+
+best pratice di Conda
+- pakai miniconda
+- base jangan diisi apa2 kecuali jupyter
+- install packages dengan batch installation
+- check dengan python check_installation.py
+
+big data
+definisi mudah: jika pc sudah tidak kuat maka harus pakai tool big data --> java environment
+
+jika ada missing value
+1. ask --> tanya yang beri data
+2. drop --> dibuang
+3. impute --> diisi
+
+DataFrame
+column = series
+
+df_cereal.rating.transform(lambda x: x/x.sum())
+
+
+handling categorical label
+1. ordinal encoding & label encoding
+- menomori setiap data category
+- kelemahannya adalah tidak fair karena ada label dinomori 0 atau 1 atau 2
+- efektif dipakai jika label nya menandakan urutan [binary (gender), ranking description (tidak bagus, bagus, sangat bagus)]
+2. One Hot Encoding
+
+Binning
+data tertentu dikelompokkan dalam suatu kategori supaya polanya terkelompok dan pada
+contohny: kategori balita - anak - remaja - dewasa - lansia (yang masing-masing punya range usia)
+contohny: pendapatan masyarakat
+
+
+Plot
+numerik - histogram
+kategorik - categorical plot
