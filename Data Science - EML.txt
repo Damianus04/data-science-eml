@@ -138,3 +138,48 @@ contohny: pendapatan masyarakat
 Plot
 numerik - histogram
 kategorik - categorical plot
+
+
+
+ALGORITHM
+
+KNN
+- lazy learning --> just look at the nearest point
+
+Titanic Data
+- prediksi apakah penumpang selamat atau tidak dari kecelakaan titanic
+
+-- note 
+	input/feature	target/label
+	X		y
+-> survived = target; yang lain jadi input
+
+
+MACHINE LEARNING --> Scikit-Learn
+DEEP LEARNING --> Keras, Tensorflow, etc
+
+
+****
+Dataset Split
+1) Regression --> dataset diacak dulu baru dipisah
+
+Shuffle Split
+2) Classification --> pisahkan dulu sesuai kelasnya, baru masing-masing kelas diajak lalu dipisah
+
+Stratified Shuffle Split
+****
+
+
+Improve data --> tuning dan scaling
+
+
+IMPORT DATA
+REVIEW DATA
+HANDLE MISSING DATA 
+SCIKIT LEARN (DATA IN X AND y) --> DECIDE FEATURE AND LABEL
+HANDLE OVERFIT
+	1. data split
+	2. make multiple scenarios - kfold validation
+	3. if want to improve
+	- improve data (scaling)
+	- improve model (change or tune model)
