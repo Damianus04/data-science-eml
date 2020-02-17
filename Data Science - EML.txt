@@ -183,3 +183,15 @@ HANDLE OVERFIT
 	3. if want to improve
 	- improve data (scaling)
 	- improve model (change or tune model)
+
+
+Training & Testing Data Analogy
+- murid belajar untuk mempersiapkan ujian
+- murid diberikan PR (train) oleh guru untuk menghadapi ujian (test)
+- murid bisa mempelajari PR untuk mencari berbagai strategi yang paling baik untuk mendapatkan nilai yang baik ketika mengerjakan ujian
+
+
+Distance
+- euclidean
+- manhattan
+- minkowski 
