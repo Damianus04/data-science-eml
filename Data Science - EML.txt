@@ -195,3 +195,14 @@ Distance
 - euclidean
 - manhattan
 - minkowski 
+
+
+
+
+
+
+functions
+- value_counts() --> display sum of category in one column
+
+
+renew and replace existing package
