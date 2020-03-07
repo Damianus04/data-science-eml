@@ -206,3 +206,31 @@ functions
 
 
 renew and replace existing package
+
+
+
+
+
+
+
+GUIDELINE
+1. Installation
+- Jupyter 
+- Conda environment
+
+2. Feature Engineering
+- binning
+	* age binning ===>>> df_titanic.Age = pd.cut(df_titanic.Age, [0, 5, 12, 18, 40, 120], labels=["toddler", "children", "teenager", "adult", "elderly"])
+	* fare binning ===>>> df_titanic.Fare = pd.cut(df_titanic.Fare, [0, 25, 100, 600], labels=["cheap", "expensive", "executive"])
+
+
+
+- encoding
+
+
+4. Tuning & Scaling
+** tuning
+
+** scaling
+knn berhubungan dengan jarak
+svm berhubungan margin
