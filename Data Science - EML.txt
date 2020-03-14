@@ -230,7 +230,7 @@ GUIDELINE
 
 4. Tuning & Scaling
 ** tuning
-cari kombinasi mana yang paling baik, contohnya ketika weight class, cari proporsi bobot/proporsi yang paling okay.
+cari kombinasi parameter mana yang paling baik, contohnya ketika weight class, cari proporsi bobot/proporsi yang paling okay.
 
 ** scaling
 knn berhubungan dengan jarak
