@@ -235,3 +235,25 @@ cari kombinasi parameter mana yang paling baik, contohnya ketika weight class, c
 ** scaling
 knn berhubungan dengan jarak
 svm berhubungan margin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Linear Regression
+- persamaan garis lurus: y = ax + b
+
+koefisien regresi harus balance, jika tidak jangan dipakai ke feature importance
