@@ -255,5 +255,33 @@ svm berhubungan margin
 
 Linear Regression
 - persamaan garis lurus: y = ax + b
+- simulasi online dengan geogebra
 
 koefisien regresi harus balance, jika tidak jangan dipakai ke feature importance
+
+
+Menyelesaikan Klasifikasi dengan Regresi menggunakan sigmoid
+Entropy (prinsip dalam fisika) bisa dipakai untuk klasifikasi
+MCE adalah loss dalam klasifikasi. --> Mean Cross Entrophy --> MCE membuat tidak ada plateau, karena plateau akan merusak optimizer gradient descent
+
+
+Algorithm/Algoritma untuk masing-masing Regresi dan Classification
+Reg		Clf
+KNN		KNN
+SVM		SVM
+DT		DT
+XGB		XGB
+LinReg		LogReg
+ElasticNet	NaiveBayes
+Ridge
+
+
+Rules of Thumb
+- Positif selalu lebih sedikit
+- Mendeteksi yang lebih sedikit, bukan yang banyak.
+- PRINSIP
+	BALANCCE		IMBALANCE (Positif sedikit)
+	1. Akurasi		1. F1 - Score
+	2. F1 - Score		2. PR Curve
+	3. ROC			Jangan pakai ROC dan Akurasi untuk
+	4. PR Curve		Imbalance Dataset
