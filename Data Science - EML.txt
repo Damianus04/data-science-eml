@@ -22,16 +22,22 @@ opening jupyter via anaconda prompt
 - type >>>jupyter notebook
 
 
-Function
+
+
+DOCSTRING
 - docstring --> shift + tab
 - jika suatu fungsi tidak memunculkan sst ketika di run, maka function itu adalah in place function 
 
-Slicing on list
+
+
+
+
+SLICING ON THE LIST PRINCIPLE
 - inclusive:exclusive
 
 
 
-sejarah Conda
+SEJARAH CONDA
 sebelumnya python tidak banyak pakai karena kesulitan orang pakai 
 lalu dibuatlah PyPi untuk mengumpulkan library (marketplace)
 lalu muncullah Conda yang merapikan library lebih baik dari PyPi (marketplace)
@@ -53,8 +59,16 @@ cara kerja Conda
 7. instal dengan anaconda bisa lama karena solving dan checking conflict sangat lama (cek 700an packages)
 8. jupyter diinstal di base dan bisa interact dengan environment lain
 
+best pratice di Conda
+- pakai miniconda
+- base jangan diisi apa2 kecuali jupyter
+- install packages dengan batch installation
+- check dengan python check_installation.py
 
-CONDA
+big data
+definisi mudah: jika pc sudah tidak kuat maka harus pakai tool big data --> java environment
+
+CONDA CODE
 1. Check Environment --> conda env list
 	Remove Environment --> conda env remove --name nama_env
 2. Install package di suatu environment --> conda install --name nama_environment numpy
@@ -86,10 +100,14 @@ hapus env --> conda env remove --name coba_env
 
 
 
-
 PANDAS
 PAnel DAtaS
 
+DATAFRAME
+column = series
+
+
+TOPICS FOR WRITING
 Article 1
 Data Type
 
@@ -102,27 +120,16 @@ How to set Python tool
 
 
 
-best pratice di Conda
-- pakai miniconda
-- base jangan diisi apa2 kecuali jupyter
-- install packages dengan batch installation
-- check dengan python check_installation.py
-
-big data
-definisi mudah: jika pc sudah tidak kuat maka harus pakai tool big data --> java environment
-
-jika ada missing value
+MISSING VALUES
 1. ask --> tanya yang beri data
 2. drop --> dibuang
 3. impute --> diisi
 
-DataFrame
-column = series
 
 df_cereal.rating.transform(lambda x: x/x.sum())
 
 
-handling categorical label
+HANDLING CATEGORICAL DATA
 1. ordinal encoding & label encoding
 - menomori setiap data category
 - kelemahannya adalah tidak fair karena ada label dinomori 0 atau 1 atau 2
@@ -133,6 +140,7 @@ Binning
 data tertentu dikelompokkan dalam suatu kategori supaya polanya terkelompok dan pada
 contohny: kategori balita - anak - remaja - dewasa - lansia (yang masing-masing punya range usia)
 contohny: pendapatan masyarakat
+
 
 
 Plot
@@ -153,6 +161,11 @@ Titanic Data
 	input/feature	target/label
 	X		y
 -> survived = target; yang lain jadi input
+
+Distance on KNN
+- euclidean
+- manhattan
+- minkowski 
 
 
 MACHINE LEARNING --> Scikit-Learn
@@ -191,11 +204,6 @@ Training & Testing Data Analogy
 - murid bisa mempelajari PR untuk mencari berbagai strategi yang paling baik untuk mendapatkan nilai yang baik ketika mengerjakan ujian
 
 
-Distance
-- euclidean
-- manhattan
-- minkowski 
-
 
 
 
@@ -222,8 +230,15 @@ GUIDELINE
 - binning
 	* age binning ===>>> df_titanic.Age = pd.cut(df_titanic.Age, [0, 5, 12, 18, 40, 120], labels=["toddler", "children", "teenager", "adult", "elderly"])
 	* fare binning ===>>> df_titanic.Fare = pd.cut(df_titanic.Fare, [0, 25, 100, 600], labels=["cheap", "expensive", "executive"])
+	* # ubah target menjadi biner
+			df_heart_disease.target = df_heart_disease.target.map(
+			       {0: False,
+                                1: True,
+                                2: True,
+                                3: True,
+                                4: True})
 
-
+3. EDA --> Part 4 - EDA dan Feature Engineering - KNN
 
 - encoding
 
@@ -235,20 +250,6 @@ cari kombinasi parameter mana yang paling baik, contohnya ketika weight class, c
 ** scaling
 knn berhubungan dengan jarak
 svm berhubungan margin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -280,8 +281,95 @@ Rules of Thumb
 - Positif selalu lebih sedikit
 - Mendeteksi yang lebih sedikit, bukan yang banyak.
 - PRINSIP
-	BALANCCE		IMBALANCE (Positif sedikit)
+	BALANCE		IMBALANCE (Positif sedikit)
 	1. Akurasi		1. F1 - Score
 	2. F1 - Score		2. PR Curve
 	3. ROC			Jangan pakai ROC dan Akurasi untuk
 	4. PR Curve		Imbalance Dataset
+
+
+
+
+
+
+
+
+RF R-squared Score
+2. 0.8343293126316038 0.771613632634213 0.8110924735037599 - complete features trial 2
+3. 0.8463976595452549 0.7669263260833341 0.8110986436363258 - SOP n LOR omitted
+1. 0.8350934581064868 0.7716428721894208 0.8098228727140044 - complete features
+
+
+
+
+
+RF R-Squared Score
+
+
+best score
+v2. {'algo__max_depth': 80, 'algo__max_features': 0.5577136220482326, 'algo__min_samples_leaf': 5, 'algo__n_estimators': 122}
+0.8752626632301754 0.8014859291745058 0.8231099331088619 
+- cv=3, n_iter=50, random
+
+
+Annisa
+algo - elasticnet
+categorical: research, numerical: all
+scaling: robust
+
+
+categorical: research, 
+cv=3, random
+
+
+
+
+Exam on 29 March 2020
+
+2nd best score
+v5. {'algo__n_estimators': 187, 'algo__min_samples_leaf': 6, 'algo__max_features': 0.5, 'algo__max_depth': 65}
+0.8659596242653081 0.8009612623374699 0.8265240728123382
+- cv=3, n_iter=50, random, 
+rfparameter = {'algo__n_estimators': range(120,196),
+ 'algo__max_depth': range(40, 80),
+ 'algo__max_features': [0.3, 0.4, 0.5, 0.6, 0.7],
+ 'algo__min_samples_leaf': range(3, 8)}
+
+3rd best score
+v1. {'algo__max_depth': 46, 'algo__max_features': 0.4756699028339012, 'algo__min_samples_leaf': 5, 'algo__n_estimators': 196}
+0.8741429363364741 0.7980725181410776 0.816984784266618 
+- cv=4, n_iter=50, random
+
+4th best score
+v6. {'algo__max_depth': 46, 'algo__max_features': 0.4756699028339012, 'algo__min_samples_leaf': 5, 'algo__n_estimators': 196}
+0.8742090314450554 0.8024970885773269 0.8211592739194714
+
+
+v7. 0.866323471153701 0.802467079663444 0.8193716221986911
+v8. {'algo__max_depth': 46, 'algo__max_features': 0.4756699028339012, 'algo__min_samples_leaf': 5, 'algo__n_estimators': 196}
+0.8717781600790467 0.8018660935102457 0.8144866387440773
+
+v3. {'algo__max_depth': 20, 'algo__max_features': 0.3, 'algo__min_samples_leaf': 1, 'algo__n_estimators': 200}
+0.9720332515007792 0.8011476590541827 0.7785931250623562
+- cv3, grid failed
+
+v4. {'algo__max_depth': 26, 'algo__max_features': 0.3607763076223912, 'algo__min_samples_leaf': 2, 'algo__n_estimators': 141, 'prep__numeric__poly__degree': 1, 'prep__numeric__poly__interaction_only': False}
+0.9270383910535411 0.8024904611169057 0.7896314305817781
+- cv3, random, poly failed
+
+
+
+manual picking --> coba randomstate nya.
+setelah splitting, plot dulu dengan histogram
+
+cek keterwakilan distribusi data train dan test melalui plotting (residual plot)
+
+pelajari semua parameter dari masing-masing algoritma
+
+Workflow 4 Phases
+Phase 1: Think Simple: Use AUTOML as benchmark
+Phase 2: Feature Engineering --> before it plot the mean score decrease
+
+
+
+
