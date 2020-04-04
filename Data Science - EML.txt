@@ -357,7 +357,7 @@ v4. {'algo__max_depth': 26, 'algo__max_features': 0.3607763076223912, 'algo__min
 0.9270383910535411 0.8024904611169057 0.7896314305817781
 - cv3, random, poly failed
 
-
+checking score on https://37194d82.ngrok.io/
 
 manual picking --> coba randomstate nya.
 setelah splitting, plot dulu dengan histogram
@@ -373,3 +373,53 @@ Phase 2: Feature Engineering --> before it plot the mean score decrease
 
 
 
+
+UNSTRUCTURED DATA
+
+jenis data
+1. structured data bentuknya tabel, disebut juga tabular data set
+2. unstructured data yang tidak tabular --> data image, text, sinyal, video
+
+bagaimana bisa mempelajari pola unstructured data
+step a --> convert dulu unstructured ke structured
+step b --> ubah itu jadi tabel dan pakai algoritma yang udah ada
+
+
+image
+- baca image pakai matplotlib, pillow, opencv, scikit-image
+1. matplotlib --> a) imread, b) imshow --> ukurannya bisa disesuaikan.
+2. PIL --> Image.open() -> array --> ukurannya sesuai image asli.
+
+pixel --> kisaran angka 0-255 --> 0=hitam, 255=putih
+
+int8 --> integer dengan 8-bit sehingga bisa menyimpan informasi sebanyak 2 pangkat 8 --> angka yang disimpan antara -127 sampai 128
+unint8 -> integer 8 bit dengan semua angka positif --> angka yang disimpan antara 0 - 255
+float --> 0.0=hitam, 1.0=putih
+
+pada konsep RGB, setiap pixel memiliki kombinasi 3 warna RGB
+RGB terbagi jadi 
+R channel		G channel 		B channel
+0 - 255			0 - 255			0 - 255			
+			    |
+			    v
+		 Colored Image pada 1 pixel
+
+
+Image Prediction
+Image Recognition --> klasifikasi apakah suatu gambar itu kucing, anjing, atau ikan
+Object Detection ==> Image Recognition ditambah border box khusus untuk memagari gambarnya
+Segmentation --> Object Detection ditambah segmentasi pixel
+
+Image Processing --> bukan prediction, biasanya dipakai setelah proses image prediction lalu dibuat untuk aplikasi filter social media atau mengubah image
+
+
+
+strukturisasi data image dengan flattening memiliki kelemahan
+- tidak menghandle jika object sama yang ada di lokasi berbeda
+- tidak menghandle translation karena pergeseran object mengakibatkan failure
+
+Voice
+- dengan spectrogram --> image --> flatten
+- audio 
+
+tingkat kesulitan --> 1) image, 2) text, 3) audio, 4) audio/video
