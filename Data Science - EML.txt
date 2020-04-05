@@ -423,3 +423,44 @@ Voice
 - audio 
 
 tingkat kesulitan --> 1) image, 2) text, 3) audio, 4) audio/video
+
+
+
+Text
+- penggunaan stopwords harus hati-hati dan bergantung tiap dataset.
+- sangat unik untuk tiap dataset dan tidak bisa berlaku general
+
+
+
+
+Basic processing to convert image and text to be Vector
+Image --> flattening
+Text --> BoW
+
+Karakteristik
+BoW: penting tidak penting ga ada karena hanya klasifikasi 0 dan 1
+TF-IDF: bisa pembobotan penting tidak penting 
+Kelemahan--> jika ada kalimat yang salah grammar, maka counting tetap jalan.
+contoh: ini adalah pensil & adalah ini pensil akan diencode dengan vector yang sama
+solusinya: N-Gram
+
+N-Gram lebih tepat melihat bobot urutan kombinasi tiap kata dengan ukuran simulasi gram.
+
+
+strukturisasi --> vektorisasi --> encoding
+
+NLP
+- Text Classification: spam classifier, sentiment analysis, topic classification, genre classification, intent classification
+- Sequence Tagging
+- Text 2 Text: machine translation
+
+
+Machine Learning
+RL 
+semi-supervised
+learning to rank
+
+
+
+NLU --> extraction (allen nlp -- sequence tagging - NER), intent clf
+NLU --> text summarization
